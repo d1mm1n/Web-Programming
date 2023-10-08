@@ -33,7 +33,8 @@
                 <li>상품 후기</li>
             </ul>
         </div>
-        <br>
+        
+
         <!--사이드 바 구현-->
         <aside class="side-bar">
           <section class="side-bar__icon-box">
@@ -74,31 +75,26 @@
             </li>
           </ul>
         </aside>
-        <br>
-        <img id="item-img" src="친환경 비누.png" >
-        <div id="item-info">
-            <p>상품명 친환경 비누 </p>
-            <hr>
-        <p>판매가 6400원</p>
-        <p>배송비 3,000원 </p>
-        <button class="dropdown-toggle">색상 옵션</button>
-        <form action="">
-            <select name="options">
-                <option value="a">그린</option>
-                <option value="a">블랙</option>
+      <br>
+        <div id="review">
+            <h2> 상품 평</h2>
+            <p>받으신 상품을 평가해주세요</p>
+            <form action="process.jsp">
+                <br>
+                <label for="name">이름</label>
+                <input type="text" id="name" placeholder="이름">
                 
-            </select>
-        </form>
-        <br>
-        <hr>
-        <br>
-        <span id="choice">찜하기</span>
-        <span id="choice">장바구니 담기</span>
-        <span id="choice2" >구매하기</span>
+                <label for="email">이메일</label>
+                <input type="text" id="email" placeholder="이메일">
+               
+                <label for="subject"></label>
+                <textarea id="subject" name="subject" placeholder="상품을 평가해주세요." style="height: 200px;"></textarea>
+                <br>
+                <br>
+                <input type="submit" value="소중한 의견 감사합니다.">
+            </form>
         </div>
-        <hr>
-
-        <br>
+        
         
     </body>
 </html>

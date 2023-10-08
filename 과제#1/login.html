@@ -2,12 +2,93 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <!--외부에 작성한 css 스타일 링크로 불러오기-->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+        <style>
+
+        </style>
     </head>
+
     <body>
-        <form action="input.jsp" method="post">
-            아이디: &nbsp; <input type="text" size="15" value=""><br>
+
+        <div id="toplogo">
+            <img src="지구1.png" width="90" height="90">
+            <a href="main.html">
+                <p>&nbsp;&nbsp;지구 살림이</p>
+            </a>
+        <br>
+        </div>
+        <hr>
+        <br>
+        <!--가로 메뉴 바 구현-->
+        <div id="menu">
+            <ul>
+                <li>전체 상품</li>
+            </ul>
+            <ul>
+                <li>할인 행사</li>
+            </ul>
+            <ul>
+                <li>인기 상품</li>
+            </ul>
+            <ul>
+                <li>상품 후기</li>
+            </ul>
+        </div>
+        <br>
+        <!--사이드 바 구현-->
+        <aside class="side-bar">
+            <section class="side-bar__icon-box">
+              <section class="side-bar__icon-1">
+                <div></div>
+                <div></div>
+                <div></div>
+              </section>
+            </section>
+            <ul>
+              <li>
+                <a href="login.html">
+                  <span><i ></i></span>
+                  <span>로그인/회원가입</span>
+                </a>
+                <ul>
+                  <li><a href="#">로그인</a></li>
+                  <li><a href="#">회원가입</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="zzim.html">
+                  <span><i></i></span>
+                  <span>찜한 목록❤️</span>  
+                </a>
+              </li>
+              <li>
+                <a href="cart.html">
+                  <span><i></i></span>
+                  <span>장바구니🛒</span>
+                </a>
+              </li>
+              <li>
+                <a href="review.html">
+                  <span><i></i></span>
+                  <span>상품 후기 작성</span>
+                </a>
+              </li>
+            </ul>
+          </aside>
+
+
+        <div id="login">
+            <img id="login-logo-img" src="지구1.png">
+        
+        <form action="login.jsp" method="post">
+            <div id="login-textbox">
+                아이디: &nbsp; <input type="text" size="15" value=""><br>
             비밀번호: <input type="password" size="15" value=""><br>
+            </div>      
             <input type="submit" value="로그인">
         </form>
+
+    </div>
     </body>
 </html>

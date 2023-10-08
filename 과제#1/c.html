@@ -3,30 +3,105 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="preload" as="font" type="font/woff2"
-        href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2"
-        crossorigin="anonymous">
-    <style>
-        @font-face {
-            font-family: 'RixInooAriDuriR';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        body {
-            font-family: 'RixInooAriDuriR', sans-serif;
-            font-size:x-large;
-        }
-    </style>
+    <!--외부에 작성한 css 스타일 링크로 불러오기-->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
 </head>
 
     <body>
-        <img src="친환경 빨대.png"  width="300" height="300">
-        <p>상품명: 친환경 빨대</p>
-        <p>가격: 1000원</p>
+        <div id="toplogo">
+            <img src="지구1.png" width="90" height="90">
+            <a href="main.html">
+                <p>&nbsp;&nbsp;지구 살림이</p>
+            </a>
         <br>
-        <p>찜하기❤️</p>
-        <p>장바구니 담기🛒</p>
+        </div>
+        <hr>
+        <br>
+        <!--가로 메뉴 바 구현-->
+        <div id="menu">
+            <ul>
+                <li>전체 상품</li>
+            </ul>
+            <ul>
+                <li>할인 행사</li>
+            </ul>
+            <ul>
+                <li>인기 상품</li>
+            </ul>
+            <ul>
+                <li>상품 후기</li>
+            </ul>
+        </div>
+        <br>
+        <!--사이드 바 구현-->
+        <aside class="side-bar">
+            <section class="side-bar__icon-box">
+              <section class="side-bar__icon-1">
+                <div></div>
+                <div></div>
+                <div></div>
+              </section>
+            </section>
+            <ul>
+              <li>
+                <a href="login.html">
+                  <span><i ></i></span>
+                  <span>로그인/회원가입</span>
+                </a>
+                <ul>
+                  <li><a href="#">로그인</a></li>
+                  <li><a href="#">회원가입</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="zzim.html">
+                  <span><i></i></span>
+                  <span>찜한 목록❤️</span>  
+                </a>
+              </li>
+              <li>
+                <a href="cart.html">
+                  <span><i></i></span>
+                  <span>장바구니🛒</span>
+                </a>
+              </li>
+              <li>
+                <a href="review.html">
+                  <span><i></i></span>
+                  <span>상품 후기 작성</span>
+                </a>
+              </li>
+            </ul>
+          </aside>
+        <br>
+        <img id="item-img" src="친환경 빨대.PNG" >
+        <div id="item-info">
+            <p>상품명 친환경 빨대</p>
+            <hr>
+        <p>판매가 1000원</p>
+        <p>배송비 3,500원 </p>
+        <button class="dropdown-toggle">색상 옵션</button>
+        <form action="">
+            <select name="options">
+                <option value="a">화이트</option>
+                <option value="a">브라운</option>
+                <option value="a">그린</option>
+                <option value="a">핑크</option>
+                <option value="a">옐로우</option>
+                <option value="a">블루</option>
+            </select>
+        </form>
+        <br>
+        <hr>
+        <br>
+        <span id="choice">찜하기</span>
+        <span id="choice">장바구니 담기</span>
+        <span id="choice2" >구매하기</span>
+        </div>
+        <hr>
+
+        <br>
+        
     </body>
 </html>

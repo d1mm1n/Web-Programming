@@ -7,61 +7,150 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="preload" as="font" type="font/woff2"
-        href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2"
-        crossorigin="anonymous">
-    <style>
-        @font-face {
-            font-family: 'RixInooAriDuriR';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        body {
-            font-family: 'RixInooAriDuriR', sans-serif;
-        }
-    </style>
+    <!--외부에 작성한 css 스타일 링크로 불러오기-->
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
 <body>
-    <div style="display: flex; justify-content: center; align-items: top;">
-        <img src="지구1.png" width="110" height="110">
+
+    <div id="toplogo">
+        <img src="지구1.png" width="90" height="90">
+
+        <a href="main.html">
+            <p>&nbsp;&nbsp;지구 살림이</p>
+        </a>
+        
     <br>
-    <p style="font-size: 40px;">지구 살림이</p>
     </div>
+    <hr>
+    <br>
+    <!--가로 메뉴 바 구현-->
+    <div id="menu">
+        <ul>
+            <li>전체 상품</li>
+        </ul>
+        <ul>
+            <li>할인 행사</li>
+        </ul>
+        <ul>
+            <li>인기 상품</li>
+        </ul>
+        <ul>
+            <li>상품 후기</li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <p style="font-size: 19px;"><em>이미지 클릭 시 상품 상세 페이지로 이동합니다.</em></p>
 
-    <!--수평으로 두기 위해 display:flex-->
-    <div style="display: flex; text-align: right; font-size:25px; justify-content: right; ">
-        <p><a href="login.html">로그인👥</a> &nbsp;&nbsp;&nbsp;&nbsp;</p>
-        <p><a href="zzim.html">찜한 목록❤️</a> &nbsp;&nbsp;&nbsp;&nbsp;</p>
-        <p><a href="cart.html">장바구니🛒</a> &nbsp;&nbsp;&nbsp;&nbsp;</p>
 
+    <!--사이드 바 구현-->
+    <aside class="side-bar">
+        <section class="side-bar__icon-box">
+          <section class="side-bar__icon-1">
+            <div></div>
+            <div></div>
+            <div></div>
+          </section>
+        </section>
+        <ul>
+          <li>
+            <a href="login.html">
+              <span><i ></i></span>
+              <span>로그인/회원가입</span>
+            </a>
+            <ul>
+              <li><a href="#">로그인</a></li>
+              <li><a href="#">회원가입</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="zzim.html">
+              <span><i></i></span>
+              <span>찜한 목록❤️</span>  
+            </a>
+          </li>
+          <li>
+            <a href="cart.html">
+              <span><i></i></span>
+              <span>장바구니🛒</span>
+            </a>
+          </li>
+          <li>
+            <a href="review.html">
+              <span><i></i></span>
+              <span>상품 후기 작성</span>
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!--슬라이드 이미지 -->
+    <!-- 라디오 박스로 슬라이드 이동을 구현합니다! 아래 동그라미-->
+    <div class="slider">
+        <input type="radio" name="slide" id="slide1" checked>
+        <input type="radio" name="slide" id="slide2">
+        <input type="radio" name="slide" id="slide3">
+        <input type="radio" name="slide" id="slide4">
+        <ul id="images" class="imgs">
+            <li><img src="지구살리기.png"></li>
+            <li><img src="지구살리기2.png"></li>
+            <li><img src="지구살리기3.jpg"></li>
+            <li><img src="지구살리기1.png"></li>
+        </ul>
+        <div class="bullets">
+            <label for="slide1">&nbsp;</label>
+            <label for="slide2">&nbsp;</label>
+            <label for="slide3">&nbsp;</label>
+            <label for="slide4">&nbsp;</label>
+        </div>
+    </div>
+    <br><br><br>
+    <hr>
+    <p style="text-align: center; font-size: 22px; background-color:  rgb(167, 216, 186);">지구 살림이 추천 상품</p>
+    <br>
+    <div  style="display: flex; justify-content: center; align-items: center; height: 45vh; ">
+        <div class="image-container">
+            <a href="a.html">
+                <img  src="천연수세미.png" width="300" height="300">&nbsp;&nbsp;&nbsp;&nbsp;
+                <p class="text-overlay">천연 수세미 (3개)<br>4000원</p>
+            </a>
+        </div>
+        
+        <div class="image-container">
+            <a href="b.html">
+                <img  src="친환경 비누.png" width="300" height="300">&nbsp;&nbsp;&nbsp;&nbsp;
+                <p class="text-overlay">친환경 비누 (단품)<br>6400원</p>
+            </a>
+        </div>
+        <div class="image-container">
+            <a href="c.html">
+                <img  src="친환경 빨대.png" width="300" height="300">&nbsp;&nbsp;&nbsp;&nbsp;
+                <p class="text-overlay">친환경 빨대<br>1000원</p>
+            </a>
+        </div>
     </div>
     
-    <p>이미지 클릭 시 상품 상세 페이지로 이동합니다.</p>
-    <div style="display: flex; justify-content: center; align-items: center; height: 50vh;">
-        <a href="a.html">
-            <img src="천연수세미.png" width="300" height="300">&nbsp;&nbsp;&nbsp;&nbsp;
-        </a>
-        <a href="b.html">
-            <img src="친환경 비누.png" width="300" height="300">&nbsp;&nbsp;&nbsp;&nbsp;
-        </a>
-        <a href="c.html">
-            <img src="친환경 빨대.png"  width="300" height="300">&nbsp;&nbsp;&nbsp;&nbsp;
-        </a>
-    </div>
-    
-    <div style="display: flex; justify-content: center; align-items: center; height: 20vh;">
-        <a href="d.html">
-            <img src="친환경 주방세제.png" width="300" height="300">&nbsp;&nbsp;&nbsp;&nbsp;
-        </a>
-        <a href="e.html">
-            <img src="친환경 화장실세정제.png" width="300" height="300">&nbsp;&nbsp;&nbsp;&nbsp;
-        </a>
-        <a href="f.html">
-            <img src="친환경 화장지.png"  width="300" height="300">&nbsp;&nbsp;&nbsp;&nbsp;
-        </a>      
+    <div style="display: flex; justify-content: center; align-items: center; height: 30vh;">
+        <div class="image-container">
+            <a href="d.html">
+                <img  src="친환경 주방세제.png" width="300" height="300">&nbsp;&nbsp;&nbsp;&nbsp;
+                <p class="text-overlay">친환경 주방세제<br>2800원</p>
+                
+            </a>
+        </div>
+        <div class="image-container">
+            <a href="e.html">
+                <img  src="친환경 화장실세정제.png" width="300" height="300">&nbsp;&nbsp;&nbsp;&nbsp;
+                <p class="text-overlay">친환경 화장실세정제<br>3600원</p>
+            </a>
+        </div>
+        <div class="image-container">
+            <a href="f.html">
+                <img  src="친환경 화장지.png" width="300" height="300">&nbsp;&nbsp;&nbsp;&nbsp;
+                <p class="text-overlay">친환경 화장지 (30매)<br>8000원</p>
+            </a>
+        </div>     
         
     </div>
     

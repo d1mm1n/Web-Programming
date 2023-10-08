@@ -1,0 +1,417 @@
+
+/* 외부 폰트 사용하기*/
+@font-face {
+    font-family: 'HSSaemaul-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/HSSaemaul-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;}
+
+body {
+        font-family: 'HSSaemaul-Regular', sans-serif;
+}
+
+#toplogo{
+    display: flex;
+    justify-content: center; /* 수평 가운데 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+    color:rgb(53, 109, 74);
+    font-size: 43px;
+}
+#menu {
+    display: flex;
+    justify-content: center; /* 수평 가운데 정렬 */
+    align-items: center; /* 수직 가운데 정렬 */
+    font-size: 20px;
+    
+}
+
+#menu ul {
+    list-style: none; /*목록 마커 없애기*/
+    padding: 0;
+    margin: 0; /* 목록 간격 제거 */
+}
+
+#menu li {
+    margin-right: 90px; /* 메뉴 항목 간격 설정 */
+}
+
+#menu:hover{
+    background-color: rgb(167, 216, 186); /*배경 색상 설정*/
+    border-radius: 20px; /*테두리를 둥글게 만들기*/
+    width: 1857px;
+    height: 50px;
+}
+
+.slider{
+    width: 1100px;
+    height: 600px;
+    position: relative; /*해당 요소를 문서흐름에 빠지지 않고 그자리에 유지한채로 상대적인 위치를 기준으로 이동가능, 주변요소에는 영향을 미치지 않는다*/
+    margin: 0 auto; /*위쪽 및 아래쪽 마진을 0으로 설정합니다. 'auto'는 가로 마진을 자동으로 조정하여 요소를 수평 중앙으로 이동시킵니다.*/
+    overflow: hidden; /* 현재 슬라이드 오른쪽에 위치한 나머지 슬라이드 들이 보이지 않도록 가림 */
+}
+.slider input[type=radio]{
+    display: none; /*화면에 표하지 않기 none으로 해주지 않으면 슬라이더 위에 라디오 버튼이 보인다.*/
+}
+/* 슬라이더의 이미지 크기를 고정*/
+ul.imgs li >img{
+    width: 1100px;
+    height: 600px;
+}
+
+ul.imgs{
+    padding: 0;
+    margin: 0;
+    list-style: none;  /*목록 마커 없애기*/
+}
+ul.imgs li{
+    position: absolute; /*절대 위치로 설정*/
+    left: 640px;
+    transition-delay: 1s; /* 새 슬라이드가 이동해 오는 동안 이전 슬라이드 이미지가 배경이 보이도록 지연 */
+    padding: 0;
+    margin: 0;
+}
+.bullets{
+    position: absolute; /*절대 위치로 설정*/
+    left: 50%;
+    transform: translateX(-50%); /*가로로 중앙에 정렬,요소를 가로 방향으로 이동 -50%는 요소의 가로 폭의 반을 왼쪽으로 이동*/
+    bottom: 20px;
+    z-index: 2;
+    /*z-index 속성은 요소 간의 쌓임 순서를 제어할 때 사용(겹치게 할때) 높은 숫자가 다른 요소위에 표시*/
+}
+.bullets label{
+    display: inline-block; /*텍스트와 같이 나란이 배치되지만 블럭요소처럼 너비 높이 설정 가능*/
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.55);
+    width: 20px;
+    height: 20px;
+    cursor: pointer; /*올렸을 때 마우스 커서 모양 지정 (클릭 할 수 있다는것을 알려주기!)*/
+}
+/* 현재 선택된 불릿 배경 흰색으로 구분 표시 */
+/*type=radio 인 요소 선택*/
+/*nth-child(1) 은 첫 번째 자식요소를 나타낸다.
+라디오 버튼 요소중에서 클래스가 bullets인 label요소 중에서 첫번째 자식을 선택*/
+.slider input[type=radio]:nth-child(1):checked~.bullets>label:nth-child(1){
+    background-color: #fff;
+}
+.slider input[type=radio]:nth-child(2):checked~.bullets>label:nth-child(2){
+    background-color: #fff;
+}
+.slider input[type=radio]:nth-child(3):checked~.bullets>label:nth-child(3){
+    background-color: #fff;
+}
+.slider input[type=radio]:nth-child(4):checked~.bullets>label:nth-child(4){
+    background-color: #fff;
+}
+
+.slider input[type=radio]:nth-child(1):checked~ul.imgs>li:nth-child(1){
+    left: 0;
+    transition: 0.5s; /*0.5 초의 애니메이션 효과*/
+    z-index:1;
+}
+.slider input[type=radio]:nth-child(2):checked~ul.imgs>li:nth-child(2){
+    left: 0;
+    transition: 0.5s;
+    z-index:1;
+}
+.slider input[type=radio]:nth-child(3):checked~ul.imgs>li:nth-child(3){
+    left: 0;
+    transition: 0.5s;
+    z-index:1;
+}
+.slider input[type=radio]:nth-child(4):checked~ul.imgs>li:nth-child(4){
+    left: 0;
+    transition: 0.5s;
+    z-index:1;
+}
+
+/* 노멀라이즈(브라우저간에 일관성 유지) 시작 */
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  a {
+    color: inherit;  /*색상을 부모 요소의 색상을 사용*/
+    text-decoration: none; /*하이퍼 링크 아래 밑줄 및 기타 요소들을 제거*/
+  }
+  /* 노멀라이즈 끝 */
+  
+  /* 커스텀 시작 */
+  
+  /* 사이드바-아이콘 시작 */
+  .side-bar__icon-box {
+    display: flex;
+    justify-content: flex-start; /*주측을 따라 시작부분으로 정렬 (여기서는 좌측 정렬)*/
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 50px;
+  }
+  
+  .side-bar__icon-1 {
+    position: relative;
+    width: 30px;
+    height: 22px;
+    margin: 1px;
+    transition: .5s; /*0.5초 애니매이션 효과*/
+  }
+  
+  /*root는 전역적으로 사용될 때 사용하기 좋음, 문서의 최상위 요소를 나타낸다*/
+  :root {
+    --side-bar__icon: .5s;
+  }
+  
+  .side-bar__icon-1 > div {
+    position: absolute;
+    width: 100%;
+    height: 20%;
+    background-color: rgb(99, 185, 125);
+    transition: all var(--side-bar__icon); /*모든 속성의 변화를 --side--bar__icon에 정의된 값에 따라 설정*/
+  }
+  
+  .side-bar__icon-1 > div:nth-of-type(1) {
+    top: 0;
+    width: auto; /*요소의 너비를 자동조정*/
+    left: 0;
+    right: 0;
+    transition: all var(--side-bar__icon), left calc(var(--side-bar__icon) / 2) calc(var(--side-bar__icon) / 2), right calc(var(--side-bar__icon) / 2) calc(var(--side-bar__icon) / 2), height calc(var(--side-bar__icon) / 2) 0s;
+  }
+  
+  .side-bar__icon-1 > div:nth-of-type(2) {
+    top: 40%; /*부모 요소의 높이의 상단에서 40%에 해당하는 상대적 위치 설정*/
+    transform-origin:bottom left; /*요소가 변환될때 요소의 어느 부분을 중심으로 전환 할지를 결정*/
+  }
+  
+  .side-bar__icon-1 > div:nth-of-type(3) {
+    top: 80%;
+    left: auto;
+    right: 0;
+    transform-origin:bottom right;
+  }
+  
+  .side-bar:hover .side-bar__icon-1 > div:nth-of-type(2) {
+    transform:rotate(45deg);
+    width: 70.5%;
+    height: 25%;
+  }
+  
+  .side-bar:hover .side-bar__icon-1 > div:nth-of-type(3) {
+    top: 40%;
+    transform:rotate(-45deg);
+    width: 70.5%;
+    height: 25%;
+  }
+  
+  .side-bar:hover .side-bar__icon-1 > div:nth-of-type(1) {
+    left: 41%;
+    right: 41%;
+    height: 100%;
+    transition: all var(--side-bar__icon), left calc(var(--side-bar__icon) / 2) 0s, right calc(var(--side-bar__icon) / 2) 0s, height calc(var(--side-bar__icon) / 2) calc(var(--side-bar__icon) / 2);
+  }
+  /* 사이드바-아이콘 끝 */
+  
+  /* 사이드바-메뉴 시작 */
+  .side-bar > ul ul {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+  }
+  
+  body {
+    height: 3333px;
+  }
+  
+  .side-bar {
+    position: fixed;
+    min-height: 100vh;
+    width: 100px;
+    overflow: hidden; /*요소의 내용이 요소의 경계를 벗엉날때 어떻게 처리 할지를 결정, 여기서는 내용이 컨테이너를 벗어날 때 내용을 숨김 처리한다.*/
+    transition: .5s;
+  }
+  
+  .side-bar ul > li > a {
+    display: block; /*블럭 타입으로 설정*/
+    color: rgb(53, 109, 74);
+    font-size: 1.7rem;
+    padding: 10px 20px;
+    white-space: nowrap; /*요소 내의 텍스트가 줄바꿈 없이 한줄로 표시(여기서는 사이드 바를 조금더 깔끔하게 보이게 하기 위해서 설정하였다.)*/
+  }
+  
+  .side-bar > ul > li > a > span:first-child {
+    position: relative;
+    display: inline-block;
+    background-image: url('네잎클로버.png'); /* 이미지 경로 지정 */
+    background-size: cover; /* 이미지 크기 조절 */
+    width: 30px; /* 이미지 가로 크기 조절 */
+    height: 30px; /* 이미지 세로 크기 조절 */
+    margin-right: 15px;
+}
+  
+  .side-bar > ul > li > a > span:last-child {
+    opacity: 0; /*투명도 설정, 0이면 완전 투명(여기서는 사이드바에 마우스를 올리기 전까지는 보이면 안되기 때문에 설정)*/
+  }
+  
+  .side-bar > ul > li > a > span > i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .side-bar ul > li > a > span {
+    vertical-align: middle; /*텍스트를 수직으로 중앙정렬*/
+  }
+  
+  .side-bar:hover {
+    width: 270px;
+    overflow: visible;
+  }
+  
+  .side-bar:hover > ul > li > a > span:last-child {
+    opacity: 1; /*마우스를 올리면 보이도록 투명도를 1로 설정*/
+    transition: .5s .1s;  }
+  
+
+  .side-bar > ul > li {
+    position: relative;
+  }
+  
+  .side-bar > ul > li:hover > ul {
+    display: block;
+  }
+  /* 사이드바-메뉴 끝 */
+  
+  /*인기 상품*/
+  .image-container {
+    position: relative; /* 이미지와 텍스트를 포함하는 컨테이너의 위치를 상대 위치로 설정 */
+    display: inline-block; /* 컨테이너가 텍스트 크기에 맞게 조절되도록 설정 */
+}
+
+.text-overlay {
+    position: absolute; /* 텍스트를 이미지 위에 겹쳐 표시하기 위해 절대 위치로 설정 */
+    left:0;
+    right:0;
+    bottom:auto;
+    top:0;
+    font-size:20px;
+    text-align:center;
+    background-color: rgba(58, 121, 84, 0.4); /* 배경 색상 및 투명도 설정 (선택 사항) */
+    color: white; /* 텍스트 색상 설정 */
+    width:300px;
+    height: 250px;
+    opacity: 0; /* 초기에 텍스트 숨김 */
+    transition: opacity 0.4s; /* 텍스트가 부드럽게 나타나고 사라지도록 트랜지션 효과 설정 */
+}
+
+.image-container:hover .text-overlay {
+    opacity: 1; /* 호버 상태일 때 텍스트 표시 */
+}
+
+#item-img{
+    padding-top: 80px;
+    padding-bottom: 50px;
+    padding-left: 250px;
+    padding-right: 40px;
+    width: 500px;
+    height: 500px;
+}
+
+#item-info{
+    display: inline-block;
+    position:absolute;
+    top:310px;
+    right:330px;
+    font-size: 30px;
+}
+
+#choice,#choice2{
+    border: 2px solid rgb(42, 83, 54);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+#choice:hover{
+    background-color: #dfffe1;
+}
+
+#choice2{
+    background-color: #5b8a6f;
+}
+
+#choice2:hover{
+    background-color: #ffffff;
+}
+
+#review{
+    width:600px;
+    height:600px;
+    padding: 25px;
+    text-align: center;
+    margin: 0 auto;
+    
+}
+
+
+input[type=text],textarea{
+    width: 100%;
+    padding:6px 10px;
+    margin:10px 0;
+    border:2px solid #729e84;
+    border-radius: 4px;
+}
+input[type=text]:hover{
+    background-color: #b3cfbf;
+}
+input[type=text]:focus{
+    font-size: 1.2em;
+}
+
+input[type=submit]{
+    background-color: #599471;
+    border: 4px dotted rgb(60, 82, 61);
+    color: #000000;
+    margin-top: 30px;
+    padding: 20px 32px ;
+    font-family: 'HSSaemaul-Regular', sans-serif;
+    font-size: 19px;
+    width: 200px;
+    height: 100px;
+    border-radius: 30px;
+}
+
+input[type=submit]:hover{
+    background-color: #fff;
+}
+
+
+#login{
+    width:600px;
+    height:600px;
+    padding: 25px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+input[type=password]{
+    width: 100%;
+    padding:6px 10px;
+    margin:10px 0;
+    border:2px solid #729e84;
+    border-radius: 4px;
+}
+
+input[type=password]:hover{
+    background-color: #b3cfbf;
+}
+
+#login-logo-img{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 350px;
+}
